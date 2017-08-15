@@ -1,0 +1,53 @@
+
+options:
+	hacker: slot 22 of player with diamond sword named "&cPunish a hacker" with lore "&4Click to punish" to close then run "ban %argument 1% Hacked client"
+on join:
+        player has played before
+	broadcast "&7Castles &8» &e%player% has joined for the first time!"
+on first join:
+	broadcast "&7"
+	broadcast "&7Castles &8» &e%player% has joined for the first time!"
+	broadcast "&a"
+Command /spawn:
+	trigger:
+                send "&eYou will be teleported in &c5 &eseconds."
+		wait 1 second
+                send "&eYou will be teleported in &c4 &eseconds."
+                wait 1 second
+                send "&eYou will be teleported in &c3 &eseconds."
+                wait 1 second
+                send "&eYou will be teleported in &c2 &eseconds."
+                wait 1 second
+                send "&eYou will be teleported in &c1 &esecond."
+                wait 1 second
+		teleport the player to {spawn}
+                send "&eYou have been teleported to &cspawn"
+Command /setspawn:
+	trigger:
+		player has permission "admin"
+		set {spawn} to location of player
+		send "&eSpawn set. Use /spawn"
+on chat:
+	{rank.%player%} is "MOD":
+		cancel event
+		broadcast "&6&lMOD &7%player% &f%message%"
+	else:
+		{rank.%player%} is "ADMIN":
+			cancel event
+			broadcast "&c&lADMIN &7%player% &f%message%"
+		else:
+			cancel event
+			broadcast "&7%player% &f%message%"
+Command /setrank <player> <text>:
+	trigger:
+		player has permission "admin"
+		set {rank.%argument 1%} to argument 2
+		send "&eRank set!"
+		send "&aYou are now &c%argument 2% &erank!" to argument 1
+Command /P <player>:
+	trigger:
+		player has permission "admin"
+		set {punish.%player%} to argument 1
+		open chest with 6 rows named "&6Punish&eGUI" to player
+		wait 1 tick
+		format {@hacker}
