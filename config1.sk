@@ -1,3 +1,6 @@
+# WARNING /spawn DOES NOT POP UP WITH MESSAGES (WILL FIX)
+# ONLY RANKS ARE DEFAULT (JUST GRAY), MOD, AND ADMIN. (ADMIN BEING OWNER-ADMINS) 
+# USING SETRANK DOES NOT GIVE PERMISSIONS JUST A PREFIX. GIVE PERMISSIONS WITH THE PLUGIN "PERMISSIONSEX"
 
 options:
 	hacker: slot 22 of player with diamond sword named "&cPunish a hacker" with lore "&4Click to punish" to close then run "ban %argument 1% Hacked client"
