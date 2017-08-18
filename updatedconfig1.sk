@@ -2,7 +2,7 @@ options:
 	hacker: slot 22 of player with diamond sword named "&cPunish a hacker" with lore "&4Click to punish" to close then run "ban %argument 1% Hacked client"
 on join:
         player has played before
-	broadcast "&7Castles &8» &e%player% has joined for the first time!"
+	broadcast "&7Castles &8» &e%player% has joined again!"
 on first join:
 	broadcast "&7"
 	broadcast "&7Castles &8» &e%player% has joined for the first time!"
